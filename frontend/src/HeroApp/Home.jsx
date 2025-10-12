@@ -21,7 +21,7 @@ function Home() {
           </div>
           <div className='catch'>
             <h4>
-             Master skills, retain knowledge, and achieve learning goals effortlessly — <span>LearnFlow</span> creates the perfect path for your personal growth and success.
+             Master skills, retain knowledge, and achieve learning goals effortlessly — <span>LearnFloow</span> creates the perfect path for your personal growth and success.
             </h4>
           </div>
           <div className='getstarted'>
