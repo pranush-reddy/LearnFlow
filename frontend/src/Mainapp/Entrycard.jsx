@@ -3,7 +3,7 @@ import Nav from "../HeroApp/Nav";
 import "./Entrycard.css";
 
 function Entrycard({ response }) {
-    console.log("Entrycard received response:", response);
+    
 
   const [activeTab, setActiveTab] = useState("Plan");
 const weekPlanLength = response?.week_plan?.length || 0;

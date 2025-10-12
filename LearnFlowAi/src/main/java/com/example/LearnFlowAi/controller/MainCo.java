@@ -17,7 +17,7 @@ public class MainCo {
     @Autowired
     private Accountservice serv;
 
-    @GetMapping("/wake")
+    @GetMapping("/wakeup")
     public void NoBhAAi(){
         return;
     }
@@ -26,8 +26,8 @@ public class MainCo {
     private WebClient perplexityWebClient;
 
     @GetMapping("/")
-    public String Er() {
-        return "Welcome";
+    public void Er() {
+        return ;
     }
 
 //    @PostMapping("/message")
@@ -61,7 +61,6 @@ public class MainCo {
 //            return "{\"error\": \"Invalid request format. Please send in Gemini structured format.\"}";
 //        }
 //    }
-    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/make")
     public Mono<String> ReqtoAPI(@RequestBody Map<String, String> body) {
         String prompt = body.get("prompt");  // user input

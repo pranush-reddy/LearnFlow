@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import axios from "axios";
 import Nav from "../HeroApp/Nav.jsx";
 import { Ping } from "ldrs/react";
 import "ldrs/react/Ping.css";
 import "./Ai.css";
 import Entrycard from "./Entrycard.jsx";
+import api from '../api/axios'; 
 
 function Ai() {
   const [prompt, setPrompt] = useState("");
@@ -12,12 +12,16 @@ function Ai() {
   const [loading, setLoading] = useState(false);
 
   const handleInput = (e) => setPrompt(e.target.value);
-
+ 
+   useEffect(() => {
+   api.get("/wakeup");
+ });
+ 
   const sendReq = async () => {
     if (!prompt.trim()) return; //empty prompt
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:8080/make", { prompt });
+      const res = await api.post("/make", { prompt });
       let data = res.data;
 
       // If it's already an object (JSON), skip cleaning
