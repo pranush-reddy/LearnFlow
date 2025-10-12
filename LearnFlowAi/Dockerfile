@@ -1,34 +1,32 @@
-# FROM eclipse-temurin:21-jdk
-# WORKDIR /app
+# Stage 1: Build the jar using Maven
+FROM eclipse-temurin:21-jdk AS build
 
-# # Copy Maven wrapper and pom.xml
-# COPY mvnw .
-# COPY mvnw.cmd .
-# COPY .mvn .mvn
-# COPY pom.xml .
-
-# # Copy source code
-# COPY src ./src
-
-# # Build the jar inside Docker
-# RUN ./mvnw package -DskipTests
-
-# # Copy the built jar to a standard name
-# RUN cp target/*.jar app.jar
-
-# EXPOSE 8080
-# ENTRYPOINT ["java","-jar","app.jar"]
+WORKDIR /app
 
 # Copy Maven wrapper and pom
 COPY .mvn .mvn
 COPY mvnw .
 COPY pom.xml .
 
-# Give execute permissions inside the container
-RUN ["chmod", "+x", "./mvnw"]
-
 # Copy source code
 COPY src ./src
 
-# Build the jar
+# Make mvnw executable (important for Linux containers)
+RUN chmod +x ./mvnw
+
+# Build jar
 RUN ./mvnw package -DskipTests
+
+# Stage 2: Run the app
+FROM eclipse-temurin:21-jdk
+
+WORKDIR /app
+
+# Copy the jar from the build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose port (Render injects PORT env)
+EXPOSE 8080
+
+# Run the jar
+ENTRYPOINT ["java","-jar","app.jar"]
