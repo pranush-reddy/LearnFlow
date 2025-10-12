@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import Nav from "./Nav"
 import api from '../api/axios';
 import "./contact.css"

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Nav from "./Nav";
 import person from "../assets/person.webp"; 
 import "./About.css"
