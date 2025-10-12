@@ -4,8 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Spring Boot
 target/
 application.yml
+*.log
+.mvn/wrapper/
+
 ### STS ###
 .apt_generated
 .classpath
