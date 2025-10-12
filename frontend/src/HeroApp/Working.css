@@ -1,0 +1,53 @@
+.process-container {
+  display: flex;               
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  align-items: center;
+  width:95vw;
+    gap:2vh;         
+  padding: 1%;                
+  box-sizing: border-box;
+  margin-bottom: 20vh;
+}
+#how{
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    padding-bottom: 2%;
+}
+.process {
+  border: 1px solid white;
+  padding: 3%;
+  text-align: center;
+  flex: 1 1 calc(33.333% - 20px); 
+  box-sizing: border-box;
+  cursor: pointer;
+
+  border: 1px solid #1f6deb;
+  transition: box-shadow 0.4s ease-in-out;
+  min-width: 20vw;
+}
+
+.process:hover{
+    box-shadow: 1px 0px 10px #1f6deb;
+}
+.process svg {
+  transform: scale(1.5);
+  background: none;
+}
+
+.process h2 {
+  color: white;
+}
+@media (max-width: 620px) {
+  
+  .process{
+    min-width: 80vw;
+    padding: 8% 0%;  
+  }.process svg{
+    scale: 0.8;
+  }.process h2{
+    font-size: 1.2em;
+  }
+
+}

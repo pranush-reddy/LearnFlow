@@ -1,0 +1,70 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.Aicont{
+    
+    color: white;
+}
+.promptbox{
+    margin-top: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+input{
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 1%;
+    width: 30vw;
+    height: 5vh;
+    color: white;
+    border-radius:10px ;
+    font-size: 1.2em;
+    box-shadow: 20px 0px 60px #3852c7d4, -20px -20px 60px #142575;
+
+}
+button#craft{
+    height:9vh;
+    margin: 2px;
+    width: 8.3vw;
+    border: none;
+    border-radius: 0px 10px 10px 0px ;
+    background-color: #3853c7;
+    color: white;
+    font-size: 1.2em;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}p{
+    color:rgb(255, 255, 255);
+    font-size: 3rem;
+}#crft{
+    background: #3853c7;
+}.crafting{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+} 
+@media (max-width: 620px) {
+    .promptbox{
+        flex-direction: column;
+    }
+    button#craft{
+        min-width: 30vw;
+        margin-top: 10%;
+        max-height: 7vh;
+          border-radius: 10px 10px 10px 10px ;
+    }
+    input{
+        width: 75vw;
+        height: 8vh;
+        font-size: 1em;
+        padding-left: 4%;
+
+    }
+
+
+}

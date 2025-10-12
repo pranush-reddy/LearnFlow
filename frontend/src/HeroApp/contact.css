@@ -1,0 +1,54 @@
+form{
+    margin-top: 20vh;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+justify-content: center;
+align-items: center;
+
+}form textarea{
+  resize: none;
+  padding: 2%;
+  font-size: 1.1em;
+  color: white;
+  border-radius: 10px;
+     box-shadow: 
+    20px 0px 30px -5px #3852c7d4, 
+    -20px -20px 30px -5px #142575;
+
+}
+h4{
+    color:rgb(218, 218, 218);
+    font-size: 2em;
+    padding-bottom: 5vh;
+}form button{
+    width:7vw;
+    min-width: 8vw;
+    color: white;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2466d8;
+    border-radius: 10px;
+    float:right;
+    cursor: pointer;
+    border: none;
+}
+form button svg{
+    background: none;
+    scale: 1.6;
+    
+}
+@media (max-width:620px) {
+    form textarea{
+        width: 70vw;
+    }h4{
+        font-size: 1.6em;
+        padding-bottom: 5%;
+    }form button{
+        width: 25vw;
+        height: 6vh;
+    }
+}
