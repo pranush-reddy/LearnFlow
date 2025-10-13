@@ -6,26 +6,24 @@ section{
     max-width: 20vw;
     width: 17vw;
     padding: 1% 1%;
-    height: 60vh;
-    position: fixed;          
-    top: 50%;                 
+    height: 40vh;
+    position: fixed; 
+    height: max-content;         
+    top: 55%;                 
     left: 0;
-    transform: translateY(-50%);
-}
-.sidemenu{
-    display: flex;
-    flex-direction: column;
     
+    transform: translateY(-50%);
 }
 .dash{
     padding-left: 2%;
-    padding-bottom: 10%;
+    padding-bottom: 7%;
 }
 .sidemenu a{
-   
-    font-size: 1.4em;
+   display: block;
+
+    font-size: 1.2em;
     color: black;
-    padding: 4%;
+    padding: 3%;
      padding-left: 20%;
 }
 .sidemenu a:hover{
@@ -35,6 +33,9 @@ section{
      margin-top: 20vh;
     margin-left: 20vw;
     margin-right: 5vw;
+    position: fixed;
+    top: 4%;
+    overflow-x: auto;
 }.maintag h3{
     font-size: 4em;
     margin-bottom: 4vh;
@@ -71,6 +72,8 @@ section{
     padding-bottom: 4vh;    
  }.plan p{
     padding-bottom: 4vh;
+ }.navbottom{
+    display: none;
  }
  @media (max-width: 620px) {
     section.dashboard{
@@ -82,9 +85,38 @@ section{
         color: red;
         
     }.content{
-        
-    margin-left: 1vw;
-        margin-top: 20vh;
         scale: 0.8;
+        margin: 5vh 1vw;
+        margin-bottom: 20vh;
+        overflow-x: auto;
+    }
+    .navbottom{
+        display: block;
+        position: fixed;
+        bottom: 0vh;
+
+        width: 100vw;
+        
+        margin-top: 10vh;
+    }.navbox{
+        display: flex;
+        height: 6.3vh;
+        
+        justify-content: center;
+        align-items: center;
+        
+        background-color:#1f6deb;
+        justify-content: space-evenly;
+    
+       
+    }.navbox a{
+     background-color:#1f6deb;
+         color: black;
+    }.bnt svg{
+       background-color:#1f6deb;
+       
+    }
+    .bnt:active{
+        color: green;
     }
  }

@@ -24,6 +24,9 @@ input{
     font-size: 1.2em;
     box-shadow: 20px 0px 60px #3852c7d4, -20px -20px 60px #142575;
 
+}button svg{
+    scale: 0.7;
+
 }
 button#craft{
     height:9vh;
@@ -34,7 +37,7 @@ button#craft{
     background-color: #3853c7;
     color: white;
     font-size: 1.2em;
-    /* display: flex; */
+    display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;

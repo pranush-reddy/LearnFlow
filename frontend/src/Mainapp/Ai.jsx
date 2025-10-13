@@ -103,7 +103,7 @@ function Ai() {
                   <path d="M4 17v2"></path>
                   <path d="M5 18H3"></path>
                 </svg>
-                {loading ? "Crafting..." : "Craft"}
+                Craft
 
           </button><br/></div>
 

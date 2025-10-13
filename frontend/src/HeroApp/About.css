@@ -3,6 +3,8 @@ section.me{
     padding: 3% 1% ;
     box-shadow: 0px 0px 30px #307ffe;
     position: fixed;
+    top: 50%;
+
 }
 section.me img {
   width: 11vw;
@@ -15,12 +17,12 @@ section.me img {
   margin:0% auto;
 }
 section.me h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: white;
     text-align: center;
 }
 section.me p{
-    font-size: 1.6em;
+    font-size: 1.3em;
     text-align: center;
     padding: 2vh;
     
