@@ -93,7 +93,7 @@ a {
 }
 .started {
     display: inline-flex;                
-    justify-content: flex-start;      
+    justify-content:center;      
     align-items: center;          
     font-size: 1.3rem;
     width: 15vw;
@@ -252,3 +252,4 @@ a svg#get{
 
 
 }
+
