@@ -14,8 +14,7 @@ function Contact() {
         SetComment(e.target.value)
     );
     const handleSubmit=(e)=>(
-         SetComment(""),
-         window.alert("Thank you")
+         SetComment("")
     )
   return (
     <>

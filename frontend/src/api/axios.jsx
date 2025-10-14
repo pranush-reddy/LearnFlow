@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Use the backend URL from .env
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = 'https://learnflow-dx2b.onrender.com';
 
 const api = axios.create({
   baseURL: backendUrl,

@@ -46,6 +46,8 @@ section{
 
 
 }.maintag a{
+    display: flex;
+    align-items: center;
     background-color: black;
     text-decoration: underline;
     font-size: 1.1em;
@@ -54,7 +56,7 @@ section{
 }
  a svg{
     background-color: black;
-    scale: 0.8;
+    scale: 0.5;
     
  }.maintag a:hover{
     color: #1f6deb;
@@ -63,6 +65,7 @@ section{
     padding-bottom: 4%;
  }.milestones li , .tips li{
     list-style:square;
+    color: white;
     margin-left: 2vw;
     font-size: 1.4em;
  }
@@ -87,8 +90,8 @@ section{
     }.content{
         scale: 0.8;
         margin: 5vh 1vw;
-        margin-bottom: 20vh;
-        overflow-x: auto;
+        position: absolute;
+        margin-bottom: 10vh;
     }
     .navbottom{
         display: block;
@@ -97,8 +100,12 @@ section{
 
         width: 100vw;
         
-        margin-top: 10vh;
-    }.navbox{
+        margin-top: 3vh;
+    }.maintag{
+        margin-bottom: 10vh;
+        overflow-x: auto;
+    }
+    .navbox{
         display: flex;
         height: 6.3vh;
         
@@ -118,5 +125,7 @@ section{
     }
     .bnt:active{
         color: green;
+    }.milestones li{
+        list-style:disc;
     }
  }

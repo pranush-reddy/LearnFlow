@@ -117,7 +117,7 @@ function Ai() {
                 transition: "opacity 0.3s ease",
               }}
             >
-              <Ping size="80" speed="2" color="#1f6deb"  />
+              <Ping style={{ backgroundColor: "none" }} size="80" speed="2" color="#1f6deb"  />
               <h2
                 style={{
                   color: "#1f6deb",
