@@ -93,11 +93,7 @@ a {
 }
 .started {
     display: inline-flex;                
-<<<<<<< HEAD
-    justify-content:center;      
-=======
-    justify-content: center;      
->>>>>>> c4cd5e4 (mobile ui fix and svg fixes)
+    justify-content:center;       
     align-items: center;          
     font-size: 1.3rem;
     width: 15vw;
@@ -267,4 +263,5 @@ a#login svg{
 
 
 }
+
 
