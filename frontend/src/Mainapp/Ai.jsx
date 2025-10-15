@@ -7,6 +7,8 @@ import Entrycard from "./Entrycard.jsx";
 import api from '../api/axios'; 
 
 function Ai() {
+  const [showNotif, setShowNotif] = useState(false);
+
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -21,6 +23,7 @@ function Ai() {
     if (!prompt.trim()) return; //empty prompt
     try {
       setLoading(true);
+     
       const res = await api.post("/make", { prompt });
       let data = res.data;
 
@@ -41,6 +44,10 @@ function Ai() {
         // Parse as JSON
         parsedData = JSON.parse(cleanedData);
       } else {
+         setShowNotif(true);
+
+  // Hide after 3 seconds
+  setTimeout(() => setShowNotif(false), 3000);
         throw new Error("Unexpected response format");
       }
 
@@ -48,6 +55,10 @@ function Ai() {
       setResponse(parsedData);
 
     } catch (err) {
+      setShowNotif(true);
+
+  // Hide after 3 seconds
+  setTimeout(() => setShowNotif(false), 3000);
       console.error("Error fetching or parsing data:", err);
     } finally {
       setLoading(false);
@@ -133,7 +144,19 @@ function Ai() {
       ) : (
         <Entrycard response={response} />
       )}
-    </div>
+     {showNotif && (
+  <div className="notif">
+    <h3>
+      Oh snap!<br/>
+      <span style={{background:'white',color:"black"}}>
+        Whoops! Give it another shot.
+        
+      </span>
+    </h3>
+  </div>
+)}
+
+     </div>
   );
 }
 

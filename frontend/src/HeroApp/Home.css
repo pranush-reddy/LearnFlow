@@ -13,7 +13,7 @@ nav {
     display:flex;
     justify-content:space-between; 
     align-items:center;
-    padding: 1rem 2rem;
+    padding: 0.8em 2rem;
     font-size: 1.2em;
     margin:2% 2%;
     border-radius: 45px;
@@ -92,7 +92,7 @@ a {
     align-items: center;
 }
 .started {
-    display: inline-flex;                
+    display: inline-flex;        
     justify-content:center;       
     align-items: center;          
     font-size: 1.3rem;
