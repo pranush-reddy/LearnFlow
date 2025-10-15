@@ -13,7 +13,7 @@ nav {
     display:flex;
     justify-content:space-between; 
     align-items:center;
-    padding: 1rem 2rem;
+    padding: 0.8em 2rem;
     font-size: 1.2em;
     margin:2% 2%;
     border-radius: 45px;
@@ -93,11 +93,7 @@ a {
 }
 .started {
     display: inline-flex;                
-<<<<<<< HEAD
-    justify-content:center;      
-=======
     justify-content: center;      
->>>>>>> c4cd5e4 (mobile ui fix and svg fixes)
     align-items: center;          
     font-size: 1.3rem;
     width: 15vw;

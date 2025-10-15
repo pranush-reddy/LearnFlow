@@ -19,7 +19,15 @@ function Working() {
     <div className='process'><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512"><path fill="#ffffff" fillRule="evenodd" d="M256 85.334h170.666V128H256zm0 149.333h170.666v42.667H256zM256 384h170.666v42.667H256zM189.814 46.126l25.364 19.51l-76.032 98.843l-68.617-60.04l21.072-24.082l42.968 37.574zm0 149.333l25.364 19.511l-76.032 98.842l-68.617-60.04l21.072-24.082l42.968 37.574zm0 149.334l25.364 19.51l-76.032 98.843l-68.617-60.04l21.072-24.082l42.968 37.574z"/></svg><br/><br/>
      <h2 id='detail'>Tasks ,Tips and Projects.</h2></div>
     </div>
-    
+    <div className='cautions'>
+  <h2 id='cau'>Note to Users</h2>
+  <ul className='points'>
+    <li>⚠️ This content is AI-generated and may vary dynamically based on prompts.</li>
+    <li>⚠️ In some cases, the AI might return null or incomplete values — try reprompting or refreshing.</li>
+    <li>⚠️ Applications may take up to 2 minutes to start since we are using a free hosting/server tier.</li>
+  </ul>
+</div>
+
     </>
   )
 }
