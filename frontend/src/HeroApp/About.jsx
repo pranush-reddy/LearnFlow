@@ -3,13 +3,10 @@ import Nav from "./Nav";
 import person from "../assets/person.webp"; 
 import "./About.css"
 import Social from "./Social"
-import api from '../api/axios';
 
 function About() {
   
-    useEffect(() => {
-    api.get("/wakeup");
-  });
+  
   
   return (
     <>

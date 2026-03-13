@@ -1,14 +1,10 @@
 import React, { useEffect,useState } from 'react'
 import Nav from "./Nav"
-import api from '../api/axios';
 import "./contact.css"
 
 function Contact() {
   
-  useEffect(() => {
-  api.get("/wakeup");
-});
-
+  
     const [comment,SetComment]=useState("");
     const HandleChange=(e)=>(
         SetComment(e.target.value)

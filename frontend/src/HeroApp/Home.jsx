@@ -3,13 +3,8 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import Nav from "./Nav";
 import Working from "./Working"
-import api from '../api/axios';
 
 function Home() {
-
-  useEffect(() => {
-  api.get("/wakeup");
-});
 
   return (
     <>

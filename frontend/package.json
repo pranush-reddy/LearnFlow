@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/lab": "^7.0.1-beta.18",
     "@mui/material": "^7.3.4",
+    "@openrouter/sdk": "^0.9.11",
     "axios": "^1.12.2",
     "ldrs": "^1.1.7",
     "primeicons": "^7.0.0",

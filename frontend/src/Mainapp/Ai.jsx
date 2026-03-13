@@ -3,8 +3,11 @@ import Nav from "../HeroApp/Nav.jsx";
 import { Ping } from "ldrs/react";
 import "ldrs/react/Ping.css";
 import "./Ai.css";
+import axios from "axios";
 import Entrycard from "./Entrycard.jsx";
-import api from '../api/axios'; 
+
+const openrouter = "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"
+
 
 function Ai() {
   const [showNotif, setShowNotif] = useState(false);
@@ -15,17 +18,104 @@ function Ai() {
 
   const handleInput = (e) => setPrompt(e.target.value);
  
-   useEffect(() => {
-   api.get("/wakeup");
- });
- 
   const sendReq = async () => {
     if (!prompt.trim()) return; //empty prompt
     try {
       setLoading(true);
      
-      const res = await api.post("/make", { prompt });
-      let data = res.data;
+    const systemPrompt = `
+Please provide the response ONLY in the following exact JSON structure.
+
+{
+  "technology": "<technology_name>",
+  "number_of_weeks": "<week_plan_length>", 
+  "week_plan": [
+    {
+      "week": 1,
+      "concepts": ["<concept_1>", "<concept_2>", "..."],
+      "milestone_project": "<project_name>"
+    },
+    {
+      "week": 2,
+      "concepts": ["<concept_1>", "<concept_2>", "..."],
+      "milestone_project": "<project_name>"
+    }
+    // Add as many weeks as needed if user mentions, else based on your recommendation
+  ],
+  "top_one_shot_videos": [
+    {
+      "title": "<video_title>",
+      "url": "<video_url>",
+      "views": "<views_count>",
+      "channel_name": "<channel>"
+    }
+    // Add multiple videos if needed (min and max 4)
+  ],
+  "free_reading_resources": [
+    {
+      "title": "<resource_title>",
+      "url": "<resource_url>",
+      "website": "<website_name>"
+    }
+    // Add multiple reading resources if needed (min and max 4)
+  ],
+  "roadmap_sh": {
+    "url": "<roadmap_url>",
+    "steps": ["<step_1>", "<step_2>", "..."]
+  },
+  "top_playlists": [
+    {
+      "title": "<playlist_title>",
+      "url": "<playlist_url_or_NA>",
+      "channel_name": "<channel>",
+      "views": "<views_count_or_NA>"
+    }
+    // Add multiple playlists (exactly 4)
+  ],
+  "milestone_projects": [
+    "<project_1>",
+    "<project_2>"
+    // Add up to 5 milestone projects
+  ],
+  "tips_and_tricks": [
+    "<tip_1>",
+    "<tip_2>",
+    "<tip_3>",
+    "<tip_4>"
+    // Add minimum 5 learning tips
+  ]
+}
+
+You must always use these exact keys, structure, and nesting and fill with real values.
+If the prompt does not specify weeks, use "number_of_weeks": null and recommend weeks.
+Only fill contents per technology. DO NOT change keys or format.
+Output ONLY valid JSON with NO extra text.
+`;
+ 
+  const response = await axios.post(
+    "https://openrouter.ai/api/v1/chat/completions",
+    {
+      model: "nvidia/nemotron-3-super-120b-a12b:free",
+      temperature: 0.2,
+      top_p: 0.9,
+      messages: [
+       
+        {
+          role: "user",
+          content: prompt +systemPrompt,
+        },
+      ],
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${openrouter}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": "http://localhost:5173",
+        "X-Title": "Learnflow Ai",
+      },
+    },
+  );
+     let data = response.data.choices[0].message.content;
 
       // If it's already an object (JSON), skip cleaning
       let parsedData;
