@@ -149,7 +149,7 @@ Output ONLY valid JSON with NO extra text.
 
   // Hide after 3 seconds
   setTimeout(() => setShowNotif(false), 3000);
-      console.error("Error fetching or parsing data:", err);
+      console.error("Facing error with AI model/parsing");
     } finally {
       setLoading(false);
     }
