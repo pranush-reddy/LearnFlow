@@ -6,7 +6,7 @@ import "./Ai.css";
 import axios from "axios";
 import Entrycard from "./Entrycard.jsx";
 
-const openrouter = "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"
+const openrouter = "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"
 
 
 function Ai() {
