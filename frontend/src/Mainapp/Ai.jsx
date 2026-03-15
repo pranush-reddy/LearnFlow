@@ -6,8 +6,7 @@ import "./Ai.css";
 import axios from "axios";
 import Entrycard from "./Entrycard.jsx";
 
-const openrouter = "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"
-
+const openrouter = import.meta.env.VITE_OPENROUTER_KEY;
 
 function Ai() {
   const [showNotif, setShowNotif] = useState(false);
